@@ -1,1 +1,5 @@
-# This is a modified version of LÖVE (love2d). The original version can be found here: [https://github.com/love2d/love](https://github.com/love2d/love)
+# LÖVE 3D Library
+
+This is a 3D graphics library for LÖVE 12, ported from a Lua-based library that uses instancing to efficiently render 3D models. The library is being rewritten in C and integrated directly into the LÖVE source code to improve performance and reduce Lua overhead.
+
+Original LÖVE: https://github.com/love2d/love
