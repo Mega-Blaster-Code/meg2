@@ -551,10 +551,13 @@ target_link_libraries(love_font INTERFACE
 #
 
 add_library(love_meg2_root STATIC
+	src/modules/meg2/defaultShader.vert
+	src/modules/meg2/Shader.cpp
+	src/modules/meg2/Shader.h
+	src/modules/meg2/Render.cpp
+	src/modules/meg2/Render.h
 	src/modules/meg2/wrap_Meg2.h
 	src/modules/meg2/wrap_Meg2.cpp
-	src/modules/meg2/Meg2.h
-	src/modules/meg2/Meg2.cpp
 )
 target_link_libraries(love_meg2_root PUBLIC
 	lovedep::Lua
