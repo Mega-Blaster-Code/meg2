@@ -1,5 +1,5 @@
-#include "modules/meg2/Render.h"
-#include "modules/meg2/Shader.h"
+#include "modules/mgold/Render.h"
+#include "modules/mgold/Shader.h"
 
 #include "common/runtime.h"
 #include "common/Module.h"
@@ -11,7 +11,7 @@ namespace love{namespace graphics{Mesh *luax_checkmesh(lua_State *L, int idx);}}
 
 namespace love
 {
-namespace meg2
+namespace mgold
 {
 
 #define instance() (Module::getInstance<graphics::Graphics>(Module::M_GRAPHICS))
@@ -31,7 +31,7 @@ static int w_render_begin(lua_State *L)
 		shader = graphics::luax_checkshader(L, 2);
 	else
 	{
-		MEG2_pushDefaultShader(L);
+		MGOLD_pushDefaultShader(L);
 		shader = graphics::luax_checkshader(L, -1);
 		lua_pop(L, 1);
 	}
@@ -96,7 +96,7 @@ static int w_render_render(lua_State *L)
 	return 0;
 }
 
-void MEG2_setRenderFunc(lua_State *L)
+void MGOLD_setRenderFunc(lua_State *L)
 {
 	lua_newtable(L); // render
 
@@ -110,5 +110,5 @@ void MEG2_setRenderFunc(lua_State *L)
 	lua_setfield(L, -2, "render");
 }
 
-} // meg2
+} // mgold
 } // love

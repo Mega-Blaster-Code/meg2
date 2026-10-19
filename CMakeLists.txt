@@ -547,25 +547,29 @@ target_link_libraries(love_font INTERFACE
 )
 
 #
-# love.meg2
+# love.mgold
 #
 
-add_library(love_meg2_root STATIC
-	src/modules/meg2/defaultShader.vert
-	src/modules/meg2/Shader.cpp
-	src/modules/meg2/Shader.h
-	src/modules/meg2/Render.cpp
-	src/modules/meg2/Render.h
-	src/modules/meg2/wrap_Meg2.h
-	src/modules/meg2/wrap_Meg2.cpp
+add_library(love_mgold_root STATIC
+	src/modules/mgold/defaultShader.vert
+	src/modules/mgold/Shader.cpp
+	src/modules/mgold/Shader.h
+	src/modules/mgold/Render.cpp
+	src/modules/mgold/Render.h
+	src/modules/mgold/Textures.cpp
+	src/modules/mgold/Textures.h
+	src/modules/mgold/Matrices.cpp
+	src/modules/mgold/Matrices.h
+	src/modules/mgold/wrap_mgold.h
+	src/modules/mgold/wrap_mgold.cpp
 )
-target_link_libraries(love_meg2_root PUBLIC
+target_link_libraries(love_mgold_root PUBLIC
 	lovedep::Lua
 	lovedep::SDL
 )
-add_library(love_meg2 INTERFACE)
-target_link_libraries(love_meg2 INTERFACE
-	love_meg2_root
+add_library(love_mgold INTERFACE)
+target_link_libraries(love_mgold INTERFACE
+	love_mgold_root
 )
 
 
@@ -1967,7 +1971,7 @@ set(LIBLOVE_DEPENDENCIES
 	love_touch
 	love_video
 	love_window
-	love_meg2
+	love_mgold
 )
 set(LIBLOVE_LIBRARIES
 	love_3p_box2d

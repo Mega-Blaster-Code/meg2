@@ -58,8 +58,8 @@
 #	include "libraries/lua53/lutf8lib.h"
 #endif
 
-// MEG2
-#include "meg2/wrap_Meg2.h"
+// MGOLD
+#include "mgold/wrap_mgold.h"
 
 // For love::graphics::setGammaCorrect.
 #ifdef LOVE_ENABLE_GRAPHICS
@@ -243,7 +243,7 @@ static const luaL_Reg modules[] = {
 #if defined(LOVE_ENABLE_WINDOW)
 	{ "love.window", luaopen_love_window },
 #endif
-	{ "love.meg2", luaopen_love_meg2 },
+	{ "love.mgold", luaopen_love_mgold },
 	{ "love.nogame", luaopen_love_nogame },
 	{ "love.jitsetup", luaopen_love_jitsetup },
 	{ "love.arg", luaopen_love_arg },

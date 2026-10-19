@@ -9,16 +9,15 @@
 #include "filesystem/Filesystem.h"
 #include "filesystem/wrap_Filesystem.h"
 
+#include "modules/mgold/Shader.h"
 
 
 namespace love
 {
-namespace meg2
+namespace mgold
 {
 
-void MEG2_setShaderFunc(lua_State *L);
+void MGOLD_setRenderFunc(lua_State *L);
 
-void MEG2_pushDefaultShader(lua_State *L);
-
-} // meg2
-} // love
+}
+}

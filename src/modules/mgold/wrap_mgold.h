@@ -2,5 +2,5 @@
 
 extern "C"{
 	
-	int luaopen_love_meg2(lua_State *L);
+	int luaopen_love_mgold(lua_State *L);
 }

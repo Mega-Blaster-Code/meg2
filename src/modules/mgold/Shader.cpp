@@ -1,4 +1,4 @@
-#include "modules/meg2/Shader.h"
+#include "modules/mgold/Shader.h"
 
 #include "common/runtime.h"
 #include "common/Module.h"
@@ -17,7 +17,7 @@ namespace love { namespace graphics { int w_Shader_send(lua_State *L); } }
 
 namespace love
 {
-namespace meg2
+namespace mgold
 {
 
 #define instance() (Module::getInstance<graphics::Graphics>(Module::M_GRAPHICS))
@@ -200,7 +200,7 @@ static int w_shader_load(lua_State *L)
 	}
 }
 
-void MEG2_pushDefaultShader(lua_State *L)
+void MGOLD_pushDefaultShader(lua_State *L)
 {
 	lua_getfield(L, LUA_REGISTRYINDEX, DEFAULT_SHADER_KEY);
 	if (luax_istype(L, -1, graphics::Shader::type))
@@ -237,17 +237,17 @@ void MEG2_pushDefaultShader(lua_State *L)
 
 static int w_shader_default_get(lua_State *L)
 {
-	MEG2_pushDefaultShader(L);
+	MGOLD_pushDefaultShader(L);
 	return 1;
 }
 
 static int w_shader_default_send(lua_State *L)
 {
-	MEG2_pushDefaultShader(L);
+	MGOLD_pushDefaultShader(L);
 	lua_insert(L, 1);
 	return graphics::w_Shader_send(L);
 }
-void MEG2_setShaderFunc(lua_State *L)
+void MGOLD_setShaderFunc(lua_State *L)
 {
 	lua_newtable(L); // shader
 
@@ -268,5 +268,5 @@ void MEG2_setShaderFunc(lua_State *L)
 	lua_setfield(L, -2, "default");
 }
 
-} // meg2
+} // mgold
 } // love
