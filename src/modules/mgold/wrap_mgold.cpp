@@ -11,6 +11,7 @@
 #include "modules/mgold/Render.h"
 #include "modules/mgold/Textures.h"
 #include "modules/mgold/Matrices.h"
+#include "modules/mgold/Collisions.h"
 
 namespace love
 {
@@ -41,6 +42,11 @@ extern "C" int luaopen_love_mgold(lua_State *L)
 	lua_setfield(L, -2, "textures");
 
 	printf("Created Textures\n");
+
+	love::mgold::MGOLD_setCollisionsFunc(L);
+	lua_setfield(L, -2, "collisions");
+
+	printf("Created Collisions\n");
 
 	lua_getglobal(L, "love");
 	if (lua_istable(L, -1))

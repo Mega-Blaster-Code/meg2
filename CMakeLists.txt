@@ -560,13 +560,17 @@ add_library(love_mgold_root STATIC
 	src/modules/mgold/Textures.h
 	src/modules/mgold/Matrices.cpp
 	src/modules/mgold/Matrices.h
+	src/modules/mgold/Collisions.cpp
+	src/modules/mgold/Collisions.h
 	src/modules/mgold/wrap_mgold.h
 	src/modules/mgold/wrap_mgold.cpp
 )
+
 target_link_libraries(love_mgold_root PUBLIC
 	lovedep::Lua
 	lovedep::SDL
 )
+
 add_library(love_mgold INTERFACE)
 target_link_libraries(love_mgold INTERFACE
 	love_mgold_root
